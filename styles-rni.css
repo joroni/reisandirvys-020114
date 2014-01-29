@@ -1,0 +1,49 @@
+div[data-ajax-warning="true"] 
+{
+	display:none !important;
+	
+}
+
+div#loading.jqm-demos div.ui-panel-content-wrap {
+	background:url(images/screen-hdpi-landscape.png) scroll center center repeat;
+}
+
+div.ui-footer a.ui-btn span.ui-btn-inner {
+	width:auto !important;
+}
+
+
+
+
+
+
+
+div[data-ajax-warning="true"] 
+{
+	display:none !important;
+	
+}
+
+#loading.jqm-demos div.ui-panel-content-wrap {
+	background:url(images/screen-hdpi-landscape.png) scroll center center repeat;
+}
+
+div.ui-footer a.ui-btn span.ui-btn-inner {
+	width:auto !important;
+}
+
+
+
+
+div.ui-header {
+	background:url(images/header-tile.png) repeat-x;
+}
+
+
+
+
+div.jqm-contentdata-role=[content], div.jqm-content ui-content {
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle ;
+}

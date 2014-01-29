@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1"> ORIG-->
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Reis &amp; Irvys</title>
+<link rel="stylesheet" href="http://demos.jquerymobile.com/1.3.2/css/themes/default/jquery.mobile-1.3.2.min.css">
+<link rel="stylesheet" href="http://demos.jquerymobile.com/1.3.2/_assets/css/jqm-demos.css">
+<!--<link rel="stylesheet" href="style-rni.css">-->
+ <link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
+    <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<script src="http://demos.jquerymobile.com/1.3.2/js/jquery.js"></script>
+<script src="http://demos.jquerymobile.com/1.3.2/_assets/js/index.js"></script>
+<script src="http://demos.jquerymobile.com/1.3.2/js/jquery.mobile-1.3.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<script type="text/javascript" src="base.js"></script>
+<style>
+
+/*.ui-btn {
+    border-radius: 5px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    display: block;
+    margin: 0.5em 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}*/
+
+.ui-btn {
+   /* background: linear-gradient(#74B042, #56A00E) repeat scroll 0 0 #56A00E;
+   background: url("images/header-tile.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);*/
+   	background: linear-gradient(#E41879, #AA125A) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #640B35;
+	border-color: -moz-use-text-color -moz-use-text-color rgba(255, 255, 255, 0.3);
+    border-radius: 5px !important;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    cursor: pointer;
+	display: block;
+    margin: 0.5em 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+.ui-btn-inner {
+	 border: 1px solid #640B35;
+	 
+   
+}
+
+.nav-search .ui-btn-up-a {
+	background-image: none;
+	background-color: #333; }
+ 
+.nav-search .ui-btn-inner {
+	border-top: 1px solid #888;
+	border-color: rgba(255, 255, 255, .1); }
+ 
+.nav-search .ui-btn.ui-first-child {
+	border-top-width: 0;
+	background: #111; }
+ 
+.userform { padding: .8em 1.2em; }
+ 
+	.userform h2 {
+		color: #555;
+		margin: 0.3em 0 .8em 0;
+		padding-bottom: .5em;
+		border-bottom: 1px solid rgba(0,0,0,.1); }
+ 
+	.userform label {
+		display: block;
+		margin-top: 1.2em; }
+ 
+.ui-grid-a {
+	margin-top: 1em;
+	padding-top: .8em;
+	margin-top: 1.4em;
+	border-top: 1px solid rgba(0,0,0,.1); }
+ 
+/*.ui-footer {
+			display:none;
+		}*/
+div[data-ajax-warning="true"] { display: none !important; }
+ 
+#latestlist img {
+	max-width: 220px !important;
+	height: auto; }
+ 
+div[data-ajax-warning="true"] { display: none !important; }
+ 
+div#loading.jqm-demos div.ui-panel-content-wrap { background: url(images/screen-hdpi-landscape.png) scroll center center repeat; }
+
+div.ui-header{  background: url("images/header-tile.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #F671BF; }
+	
+div.ui-footer{  background: url("images/header-tile.png") repeat-x scroll 0 -20px #ed088e;
+    border-top: 1px solid #F671BF; }
+ 
+div.ui-footer a.ui-btn span.ui-btn-inner { width: auto !important; }
+ 
+i.step.menu {
+	-moz-user-select: none;
+	left: -1px !important;
+	position: relative;
+	width: auto;
+	z-index: 1; }
+ 
+div[data-ajax-warning="true"] { display: none !important; }
+ 
+#loading.jqm-demos div.ui-panel-content-wrap { background: url(images/screen-hdpi-landscape.png) scroll center center repeat; }
+
+ 
+/*********************** ICON FONTS ********************************/
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0; }
+ 
+body, preview-glyphs {
+	background: #fff;
+	color: #444;
+	font: 16px/1.5 "Open Sans", Helvetica, Arial, sans-serif !important; }
+ 
+a, 
+      a:visited { color: #888; /* text-decoration: underline;*/ }
+ 
+a:hover, 
+      a:focus { color: #f93fac; }
+ 
+div#home h1 {
+	border-bottom: 0px solid #ddd;
+	color: #FFF;
+	font-size: 36px;
+	font-weight: 300;
+	margin-bottom: 20px;
+	padding: 20px; }
+ 
+.container {
+	margin: 0 auto;
+	min-width: 880px;
+	padding: 0 40px;
+	width: 80%; }
+ 
+.glyph { border-bottom: 0px solid #ccc; /*  padding: 10px 0 20px;
+        margin-bottom: 20px;*/ }
+ 
+.preview-glyphs { vertical-align: bottom; }
+ 
+.preview-scale {
+	color: #888;
+	font-size: 12px;
+	margin-top: 5px; }
+ 
+.step {
+	display: inline-block;
+	line-height: 1;
+	width: 10%; }
+ 
+.size-12 { font-size: 12px; }
+ 
+.size-14 { font-size: 14px; }
+ 
+.size-16 { font-size: 16px; }
+ 
+.size-18 { font-size: 18px; }
+ 
+.size-21 { font-size: 21px; }
+ 
+.size-24 { font-size: 24px; }
+ 
+.size-36 { font-size: 36px; }
+ 
+.size-48 { font-size: 48px; }
+ 
+.size-60 { font-size: 60px; }
+ 
+.size-72 { font-size: 72px; }
+ 
+.usage { margin-top: 10px; }
+ 
+	.usage input {
+		font-family: monospace;
+		margin-right: 3px;
+		padding: 2px 5px;
+		text-align: center; }
+ 
+	.usage .point { width: 150px; }
+ 
+	.usage .class { width: 250px; }
+ 
+.footer {
+	color: #888;
+	font-size: 12px;
+	padding: 20px 0; }
+</style>
+
+</head>
+<body onload="onBodyLoad()">
+<!-- /page 1 -->
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="loading">
+	<div data-role="header" data-theme="f" data-position="fixed">
+		<!--<h1>Home</h1>-->
+          <div class="glyph">
+            <div class="preview-glyphs">
+				<a href="#nav-panel"><i class="step fi-align-justify size-36" ></i></a>
+                <p style="float:right;"><a href="#login"><i class="step fi-torso size-36" ></i></a></p>
+		<!--<a href="#login" data-icon="gear" data-iconpos="notext">Add</a>-->
+        	</div>
+        </div>
+	</div>
+	<!-- /header -->
+	<div data-role="content" class="jqm-content">
+		<!--<h1>Panels</h1>
+		<h2>Fixed positioning</h2>-->
+		<p>
+        
+            <br>
+			<center>
+			<img src="images/logo.png">
+			</center>
+            <br>
+            <br> <br>
+			<center>
+			<img src="images/my_story.png">
+			</center>
+		</p>
+		<!--<a href="./" class="jqm-button" data-ajax="false" data-role="button" data-mini="true" data-inline="true" data-icon="arrow-l" data-iconpos="left">Back to Panels</a>
+		<div data-demo-html="#panel-fixed-page1" data-demo-css="true">
+		</div>-->
+		<!--/demo-html -->
+	</div>
+	<!-- /content -->
+	<div data-role="footer" data-position="fixed" data-theme="f">
+  <!--  <a data-inline="true" data-iconpos="bottom" data-icon="arrow-d" data-role="button" href="#" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-bottom ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Bottom</span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span></span>-->
+    
+  		<a href="#shout"><i class="step menu fi-share size-48" ></i></a>
+   		 <a onclick="addStory();" href="#addstory"><i class="step menu fi-comment-quotes size-48" ></i></a>
+    	<a onclick="how();"><i class="step menu fi-archive size-48" ></i></a>
+     	 <a onclick="listArticles();"><i class="step menu fi-burst-new size-48" ></i></a>
+  		
+		<!--<a href="http:www.reisandirvys.com" target="_blank">www.reisandirvys.com</a>
+		<a href="#settings" data-icon="gear" class="ui-btn-right">Settings</a>
+		<a id="footout" href="#login" data-role="button" data-icon="delete">Account</a>-->
+	</div>
+	<!-- /footer -->
+	<!-- panel left -->
+	<div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+    	
+		<ul data-role="listview" data-theme="a" class="nav-search">
+        
+			<li data-icon="arrow-l"><div id="loggedin"></div></li>
+			<!--<li data-icon="arrow-u"><a href="#home">Start Here</a></li>-->
+			<li data-icon="info"><a href="#info">Info</a></li>
+             <li><a href="#settings">Settings</a></li>
+			<li data-icon="minus"><a href="#" id="logoutli" onmousedown="loginout();">Logout</a></li>
+			
+		</ul>
+	</div>
+	<!-- /panel left -->
+	<!-- /panel right -->
+	<!--<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="login">
+		<form class="userform">
+			<h2>Login</h2>
+			<label for="username">Username:</label>
+			<input type="text" name="username" id="username" value="" data-clear-btn="true" data-mini="true">
+			<label for="password">Password:</label>
+			<input type="password" name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true">
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<a href="#" data-rel="close" data-role="button" data-theme="c" data-mini="true">Cancel</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="#" data-rel="close" data-role="button" data-theme="b" onclick="saveLogin()" data-mini="true">Login</a>
+				</div>
+				<div class="ui-block-c">
+					<a href="#" data-rel="close" data-role="button" data-theme="b" onclick="logout()" data-mini="true">Logout</a>
+				</div>
+			</div>
+		</form>
+	</div>-->
+	<!-- /panel right -->
+</div>
+<!-- /page 1 -->
+<!-- /page 2 -->
+<div data-role="page" id="home">
+	<div data-role="header" data-theme="f">
+		<h1>Welcome</h1>
+	</div>
+	<!-- /header -->
+		<div data-role="content" class="jqm-content">
+		 <p>We would like to hear from you.</p>
+               <ul data-role="listview" data-inset="true" data-theme="d">
+                  <li>
+                     <a onclick="how();">Getting started</a>
+                  </li>
+                  <li>
+                       <a onClick="addStory();">Shout out</a>
+                  </li>
+                  <li>
+                     <a onclick="listArticles();">Flavors of the week</a>
+                  </li>
+               </ul>
+		<a href="#loading" data-role="button" data-inline="true" data-mini="true" data-icon="home" data-iconpos="left">Home</a>
+	</div>
+	<!-- /content -->
+</div>
+<!-- /page 2 -->
+
+<!-- /page 3 -->
+<div data-role="page" id="login">
+	<div data-role="header" data-theme="f">
+		<h1>Login</h1>
+	</div>
+	<!-- /header -->
+
+	<div data-role="content" class="jqm-content">
+		
+        	
+                   
+                         <p> Username <input id="username" type="text"></input> </p>
+                    
+                    
+                        <p> Password <input id="password" type="password"></input></p>
+                    
+          <div id="logmsg"></div>
+          
+			<p><a data-role="button" onclick="saveLogin();" data-theme="d">Login</a></p>
+			<p><a href="http://m.reisandirvys.com/user/register" target="_blank" data-rel="close" data-theme="e">Create New Account</a></p>
+           
+			<!--<div class="ui-block-b">
+					<a href="#" id="logoutli" data-rel="close" data-role="button" data-theme="c" onclick="logout()" data-mini="true">Logout</a>
+				</div>
+			</div>-->
+			<!--    <a href="#" id="backbtn" data-id="backbtn" data-icon="back" data-iconpos="left" data-inline="true" data-rel="back" data-role="button" data-mini="true">Back</a>-->
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page 3 -->
+    
+    
+	<!-- Start of articles page 3.1 -->
+	<div data-role="page" id="stories">
+		<div data-role="header" data-id="bhead" data-theme="f">
+			<h1>Articles</h1>
+			<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+		</div>
+		<!-- /header -->
+		<div id="latestlist" data-role="content">
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- page 3.1å -->
+	<!-- /page 4 Send Articles-->
+	<div data-role="page" id="addstory">
+		<div data-role="header" data-theme="f">
+			<h1>Send Us</h1>
+		</div>
+		<!-- /header -->
+		<div id="addstorydiv" data-role="content" class="jqm-content">
+			<!--<div id="title" class="rounded left"> 
+               Title
+            </div>-->
+			<label id="title" for="storytitle">Title:</label>
+			<p>
+				<input id "storytitle" type="text" class="textround" name="storytitle"/>
+			</p>
+			<p>
+				<textarea id="story" class="arearound" style="overflow-y:scroll;" name="story" cols=45 rows=8></textarea>
+			</p>
+			<div id="result">
+			</div>
+			<br/>
+			<!--    <div id="addcontrol" data-role="controlgroup" data-type="horizontal" data-theme="a">-->
+			<p>
+				<a href="#"  onclick="sendStory();" data-role="button" data-ajax="true" data-inline="true">Send</a>
+				<a href="#" data-role="button" data-ajax="false" data-rel="back"  data-inline="true">Cancel</a>
+			</p>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page 4 -->
+	<!-- /page 5 Settings-->
+	<div data-role="page" id="settings">
+		<div data-role="header" data-theme="f">
+			<h1>Settings</h1>
+		</div>
+		<!-- /header -->
+		<div data-role="content" class="jqm-content">
+			<div class="ui-body ui-body-c">
+				 URL<br/>
+				<input id="baseurl" name="baseurl" type="text" disabled="false">
+				</input>
+				<br/>
+				View<br/>
+				<input id="view" name="view" type="text" disabled="false"></input>
+				<br/>Page<br/>
+				<input id="display" name="display" type="text" disabled="false">
+				</input>
+				<br/>
+				<!--<a data-role="button" data-theme="a" class="ui-disabled" onclick="saveSettings();">Save settings</a>-->
+                <a data-role="button" data-theme="a" class="ui-disabled">Save settings</a>
+				<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+				<!-- onclick="saveSettings() -->
+			</div>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page 5 -->
+	<!-- /page 6 Sending-->
+	<div data-role="page" id="sending">
+		<div data-role="header" data-theme="f">
+			<h1>Sending Story</h1>
+		</div>
+		<!-- /header -->
+		<div data-role="content" class="jqm-content">
+			<div id="sentmessage">
+				<p>
+					 Your message is being sent.
+				</p>
+				<p>
+					 If this message does not disappear in 2 minutes,
+				</p>
+				<p>
+					 please check your connection and try again.
+				</p>
+			</div>
+			<br/>
+            <a href="#loading" data-role="button" data-inline="true" data-mini="true" data-icon="home" data-iconpos="left">Home</a>
+			<div id="storylist">
+			</div>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page 6 -->
+	<!-- /page 7 Info-->
+	<div data-role="page" id="info">
+		<div data-role="header" data-theme="f">
+			<h1>Info</h1>
+		</div>
+		<!-- /header -->
+		<div data-role="content" class="jqm-content">
+			<p>
+				<center><img src="logo.png" width="200"></center>
+			</p>
+			 For more information go to <a href='http://www.reisandirvys.com'>www.reisandirvys.com</a>
+			<br/>
+		</p>
+		<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+	</div>
+	<!-- /content -->
+</div>
+<!-- /page 7 -->
+<!-- /page 7 Info-->
+<div data-role="page" id="howitworks">
+	<div data-role="header" data-theme="f">
+		<h1>Get Started</h1>
+	</div>
+	<!-- /header -->
+	<div data-role="content" class="jqm-content">
+		<div class="ui-body ui-body-c">
+			<p>
+				<strong>Hi!
+				<div id="loggedin">
+				</div>
+				</strong>
+			</p>
+			<p>
+				 On this app, you may be able to...
+			</p>
+			<p>
+				<strong>Quick step guide to getting started</strong>
+			</p>
+			<p>
+				 1. Sign up.<br/>
+				2. Vote for our weekly FROYO combinations.<br/>
+				3. Share.<br/>
+				4. Suggest<br/>
+				5. Win a free FROYO treat!
+			</p>
+		</div>
+		<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+	</div>
+	<!-- /content -->
+</div>
+<!-- /page 7 -->
+
+
+<!-- /page 9 Info-->
+	<div data-role="page" id="shout">
+		<div data-role="header" data-theme="f">
+			<h1>Shout Out!</h1>
+		</div>
+		<!-- /header -->
+		<div data-role="content" class="jqm-content">
+			<p>
+				<center><img src="logo.png" width="200"></center>
+			</p>
+			 For more information go to <a href='http://www.reisandirvys.com'>www.reisandirvys.com</a>
+			<br/>
+		</p>
+		<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+	</div>
+	<!-- /content -->
+</div>
+<!-- /page 9 -->
+
+
+<!-- /page 10 Info-->
+	<div data-role="page" id="social">
+		<div data-role="header" data-theme="f">
+			<h1>Connect to Social</h1>
+		</div>
+		<!-- /header -->
+		<div data-role="content" class="jqm-content">
+			<p>
+				<center><img src="logo.png" width="200"></center>
+			</p>
+			 For more information go to <a href='http://www.reisandirvys.com'>www.reisandirvys.com</a>
+			<br/>
+		</p>
+		<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+	</div>
+	<!-- /content -->
+</div>
+<!-- /page 10 -->
+</body>
+</html>
